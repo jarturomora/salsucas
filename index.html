@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tu pedido de Salsucas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__overlay">
+        <div class="hero__text">
+          <h1>Tu pedido<br /><span>de Salsucas</span></h1>
+        </div>
+        <div class="hero__logo" aria-hidden="true"></div>
+      </div>
+    </header>
+
+    <main class="container">
+      <form id="pedidoForm" class="card" action="#" method="post">
+        <fieldset class="grid">
+          <legend>Datos del cliente</legend>
+          <label class="field">
+            <span>Nombre</span>
+            <input name="nombre" type="text" placeholder="Tu nombre" required />
+          </label>
+          <label class="field">
+            <span>Correo (opcional)</span>
+            <input
+              name="email"
+              type="email"
+              placeholder="tucorreo@ejemplo.com"
+            />
+          </label>
+        </fieldset>
+
+        <fieldset class="productos">
+          <legend>Selecciona cantidades (máx. 5 por tipo)</legend>
+
+          <!-- Xnipec picante -->
+          <section class="producto">
+            <h3>Salsa Xnipec picante</h3>
+            <div class="presentaciones">
+              <label class="presentacion">
+                <span>420 g</span>
+                <select
+                  name="xnipec_picante_420"
+                  aria-label="Xnipec picante 420 g"
+                >
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </label>
+              <label class="presentacion">
+                <span>750 g</span>
+                <select
+                  name="xnipec_picante_750"
+                  aria-label="Xnipec picante 750 g"
+                >
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </label>
+            </div>
+          </section>
+
+          <!-- Xnipec poco picante -->
+          <section class="producto">
+            <h3>Salsa Xnipec poco picante</h3>
+            <div class="presentaciones">
+              <label class="presentacion">
+                <span>420 g</span>
+                <select
+                  name="xnipec_poco_420"
+                  aria-label="Xnipec poco picante 420 g"
+                >
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </label>
+              <label class="presentacion">
+                <span>750 g</span>
+                <select
+                  name="xnipec_poco_750"
+                  aria-label="Xnipec poco picante 750 g"
+                >
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </label>
+            </div>
+          </section>
+
+          <!-- Xnipec sin picante -->
+          <section class="producto">
+            <h3>Salsa Xnipec sin picante</h3>
+            <div class="presentaciones">
+              <label class="presentacion">
+                <span>420 g</span>
+                <select
+                  name="xnipec_sin_420"
+                  aria-label="Xnipec sin picante 420 g"
+                >
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </label>
+              <label class="presentacion">
+                <span>750 g</span>
+                <select
+                  name="xnipec_sin_750"
+                  aria-label="Xnipec sin picante 750 g"
+                >
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </label>
+            </div>
+          </section>
+
+          <!-- Salsa macha (solo 250 g) -->
+          <section class="producto">
+            <h3>Salsa macha</h3>
+            <div class="presentaciones">
+              <label class="presentacion">
+                <span>250 g</span>
+                <select name="macha_250" aria-label="Salsa macha 250 g">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </label>
+            </div>
+          </section>
+
+          <!-- Chilaquiles picante (solo 750 g) -->
+          <section class="producto">
+            <h3>Salsa Chilaquiles picante</h3>
+            <div class="presentaciones">
+              <label class="presentacion">
+                <span>750 g</span>
+                <select
+                  name="chilaquiles_picante_750"
+                  aria-label="Salsa Chilaquiles picante 750 g"
+                >
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </label>
+            </div>
+          </section>
+
+          <!-- Tortillas de maíz -->
+          <section class="producto">
+            <h3>Tortillas de maíz</h3>
+            <div class="presentaciones">
+              <label class="presentacion">
+                <span>Cantidad</span>
+                <select name="tortillas" aria-label="Tortillas de maíz">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </label>
+            </div>
+          </section>
+
+          <!-- Totopos de maíz -->
+          <section class="producto">
+            <h3>Totopos de maíz</h3>
+            <div class="presentaciones">
+              <label class="presentacion">
+                <span>Cantidad</span>
+                <select name="totopos" aria-label="Totopos de maíz">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </label>
+            </div>
+          </section>
+        </fieldset>
+
+        <div class="acciones">
+          <button type="submit">Enviar pedido</button>
+          <button type="reset" class="sec">Limpiar</button>
+        </div>
+        <p class="nota">
+          * Máximo 5 por tipo. Ajusta la cantidad a 0 si no deseas ese producto.
+        </p>
+      </form>
+    </main>
+
+    <footer class="footer">
+      <small>© Salsucas</small>
+    </footer>
+
+    <script>
+      const GAS_ENDPOINT =
+        "https://script.google.com/macros/s/AKfycbw_4GGrnldr5gy91ykMmcRnH9Jw4c1UgysUz2wNA1lcpoekFx5ZCTQQxQImgmwDuTrPjQ/exec";
+      const form = document.getElementById("pedidoForm");
+
+      form.addEventListener("submit", async (ev) => {
+        ev.preventDefault();
+        const data = new FormData(form);
+
+        // ✅ Validación: debe haber al menos un producto > 0
+        let hasAtLeastOne = false;
+        for (const [key, value] of data.entries()) {
+          if (key === "nombre" || key === "email") continue; // ignorar campos de texto
+          const qty = parseInt(value, 10) || 0;
+          if (qty > 0) {
+            hasAtLeastOne = true;
+            break;
+          }
+        }
+
+        if (!hasAtLeastOne) {
+          alert(
+            "Debes seleccionar al menos un producto antes de enviar el pedido."
+          );
+          return;
+        }
+
+        const body = new URLSearchParams(data);
+        try {
+          const res = await fetch(GAS_ENDPOINT, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+            },
+            body,
+          });
+          const json = await res.json();
+          if (json.ok) {
+            alert("¡Pedido enviado! Gracias 🙌");
+            form.reset();
+          } else {
+            alert(
+              "Error al guardar el pedido: " + (json.error || "desconocido")
+            );
+          }
+        } catch (e) {
+          console.error(e);
+          alert(
+            "No se pudo enviar el pedido. Revisa tu conexión o vuelve a intentar."
+          );
+        }
+      });
+    </script>
+  </body>
+</html>
