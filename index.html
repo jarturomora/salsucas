@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Tu pedido de Salsucas</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
     <header class="hero">
@@ -19,6 +19,16 @@
     </header>
 
     <main class="container">
+      <!-- Landing Page (controlada por JS) -->
+      <section id="landing" class="landing" hidden>
+        <div>
+          <img src="assets/logo-salsucas.png" alt="Logo Salsucas" class="logo" />
+          <h2>El picor está en pausa 🌶️</h2>
+          <p>…pero volveremos pronto.</p>
+          <p>¡Gracias por ser parte del sabor <strong>Salsucas</strong>!</p>
+        </div>
+      </section>
+
       <form id="pedidoForm" class="card" action="#" method="post">
         <fieldset class="grid">
           <legend>Datos del cliente</legend>
@@ -221,7 +231,7 @@
         </fieldset>
 
         <div class="acciones">
-          <button type="submit">Enviar pedido</button>
+          <button id="submitBtn" type="submit">Enviar pedido</button>
           <button type="reset" class="sec">Limpiar</button>
         </div>
         <p class="nota">
@@ -234,58 +244,6 @@
       <small>© Salsucas</small>
     </footer>
 
-    <script>
-      const GAS_ENDPOINT =
-        "https://script.google.com/macros/s/AKfycbzlJtZCIDmwmfT-9AO_Xipi-bAxjCZj3dL2oFZG06--22x7ftGS8sgkf83iT1bTWERbZQ/exec";
-      const form = document.getElementById("pedidoForm");
-
-      form.addEventListener("submit", async (ev) => {
-        ev.preventDefault();
-        const data = new FormData(form);
-
-        // ✅ Validación: debe haber al menos un producto > 0
-        let hasAtLeastOne = false;
-        for (const [key, value] of data.entries()) {
-          if (key === "nombre" || key === "email") continue; // ignorar campos de texto
-          const qty = parseInt(value, 10) || 0;
-          if (qty > 0) {
-            hasAtLeastOne = true;
-            break;
-          }
-        }
-
-        if (!hasAtLeastOne) {
-          alert(
-            "Debes seleccionar al menos un producto antes de enviar el pedido."
-          );
-          return;
-        }
-
-        const body = new URLSearchParams(data);
-        try {
-          const res = await fetch(GAS_ENDPOINT, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-            },
-            body,
-          });
-          const json = await res.json();
-          if (json.ok) {
-            alert("¡Pedido enviado! Gracias 🙌");
-            form.reset();
-          } else {
-            alert(
-              "Error al guardar el pedido: " + (json.error || "desconocido")
-            );
-          }
-        } catch (e) {
-          console.error(e);
-          alert(
-            "No se pudo enviar el pedido. Revisa tu conexión o vuelve a intentar."
-          );
-        }
-      });
-    </script>
+    <script src="scripts/main.js"></script>
   </body>
 </html>
