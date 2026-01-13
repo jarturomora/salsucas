@@ -1,6 +1,6 @@
 // Control de visibilidad
-const SHOW_LANDING = true; // Cambia a true para mostrar landing y bloquear envíos
-const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbzlJtZCIDmwmfT-9AO_Xipi-bAxjCZj3dL2oFZG06--22x7ftGS8sgkf83iT1bTWERbZQ/exec";
+const SHOW_LANDING = false; // Cambia a true para mostrar landing y bloquear envíos
+const GAS_ENDPOINT = "https://script.google.com/macros/s/AKfycbyBM69TYghr8icDUpHI4by9rN1vbysE3XQV8jsDcQebW4-vS-SOjUaic0SWwo4seNlizg/exec";
 
 const form = document.getElementById("pedidoForm");
 const landing = document.getElementById("landing");
